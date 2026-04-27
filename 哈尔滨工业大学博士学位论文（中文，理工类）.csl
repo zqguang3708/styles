@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" version="1.0" class="in-text" page-range-format="expanded" name-as-sort-order="all" sort-separator=" " initialize-with=" " initialize-with-hyphen="false" names-delimiter=", " demote-non-dropping-particle="never" default-locale="zh-CN">
+  <info>
+    <title>哈尔滨工业大学博士学位论文（中文，理工类）</title>
+    <title-short>哈工大博士论文</title-short>
+    <id>HIT-zqguang3708</id>
+    <link href="http://www.zotero.org/styles/HIT-zqguang3708" rel="self"/>
+    <link href="https://hitgs.hit.edu.cn/2025/0331/c17461a365618/page.htm" rel="documentation"/>
+    <author>
+      <name>zqguang3708</name>
+      <email>940233647@qq.com</email>
+    </author>
+    <category citation-format="numeric"/>
+    <category field="engineering"/>
+    <category field="science"/>
+    <summary>该样式适用于哈尔滨工业大学理工类中文博士学位论文，用于规范正文引用和文后参考文献的著录格式。</summary>
+    <published>2026-04-07T00:00:00+08:00</published>
+    <updated>2026-04-25T00:00:00+08:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+  <locale xml:lang="zh-CN">
+    <date form="numeric">
+      <date-part name="year" range-delimiter="/"/>
+      <date-part name="month" form="numeric-leading-zeros" prefix="-"/>
+      <date-part name="day" form="numeric-leading-zeros" prefix="-"/>
+    </date>
+    <terms>
+      <term name="page-range-delimiter">-</term>
+    </terms>
+  </locale>
+  <locale xml:lang="en-US">
+    <date form="numeric">
+      <date-part name="year" range-delimiter="/"/>
+      <date-part name="month" form="numeric-leading-zeros" prefix="-"/>
+      <date-part name="day" form="numeric-leading-zeros" prefix="-"/>
+    </date>
+    <terms>
+      <term name="page-range-delimiter">-</term>
+    </terms>
+  </locale>
+  <locale xml:lang="en-GB">
+    <date form="numeric">
+      <date-part name="year" range-delimiter="/"/>
+      <date-part name="month" form="numeric-leading-zeros" prefix="-"/>
+      <date-part name="day" form="numeric-leading-zeros" prefix="-"/>
+    </date>
+    <terms>
+      <term name="page-range-delimiter">-</term>
+    </terms>
+  </locale>
+  <locale>
+    <date form="numeric">
+      <date-part name="year" range-delimiter="/"/>
+      <date-part name="month" form="numeric-leading-zeros" prefix="-"/>
+      <date-part name="day" form="numeric-leading-zeros" prefix="-"/>
+    </date>
+    <terms>
+      <term name="page-range-delimiter">-</term>
+    </terms>
+  </locale>
+  <!-- Macros -->
+  <macro name="year">
+    <date variable="issued">
+      <date-part name="year"/>
+    </date>
+  </macro>
+  <macro name="author">
+    <names variable="author">
+      <name>
+        <name-part name="family" text-case="uppercase"/>
+        <name-part name="given"/>
+      </name>
+    </names>
+  </macro>
+  <macro name="editor">
+    <names variable="editor">
+      <name>
+        <name-part name="family" text-case="uppercase"/>
+        <name-part name="given"/>
+      </name>
+    </names>
+  </macro>
+  <macro name="title">
+    <!-- <text variable="title" text-case="sentence"/> -->
+    <text variable="title"/>
+    <group prefix="[" suffix="]">
+      <choose>
+        <if type="book chapter" match="any">
+          <text value="M"/>
+        </if>
+        <else-if type="thesis">
+          <text value="D"/>
+        </else-if>
+        <else-if type="standard">
+          <text value="S"/>
+        </else-if>
+        <else-if type="report">
+          <text value="R"/>
+        </else-if>
+        <else-if type="paper-conference">
+          <text value="C"/>
+        </else-if>
+        <else-if type="article-journal article-magazine" match="any">
+          <text value="J"/>
+        </else-if>
+        <else-if type="article-newspaper">
+          <text value="N"/>
+        </else-if>
+        <else-if type="patent">
+          <text value="P"/>
+        </else-if>
+        <else-if type="webpage">
+          <text value="EB/OL"/>
+        </else-if>
+        <else>
+          <text value="Z"/>
+        </else>
+      </choose>
+    </group>
+  </macro>
+  <macro name="title-conference">
+    <group delimiter="//">
+      <text macro="title"/>
+      <text variable="container-title"/>
+    </group>
+  </macro>
+  <macro name="title-monograph">
+    <group delimiter="//">
+      <text macro="title"/>
+      <group delimiter=". ">
+        <names variable="editor"/>
+        <text variable="container-title"/>
+      </group>
+    </group>
+  </macro>
+  <macro name="title-patent">
+    <group delimiter=": ">
+      <text macro="title"/>
+      <group>
+        <choose>
+          <if variable="number">
+            <!-- 专利号 -->
+            <text variable="number"/>
+          </if>
+          <else-if variable="call-number">
+            <!-- 申请号 -->
+            <text variable="call-number"/>
+          </else-if>
+        </choose>
+        <text value="P" prefix="[" suffix="]"/>
+      </group>
+    </group>
+  </macro>
+  <macro name="publication">
+    <group delimiter=": ">
+      <text variable="publisher-place"/>
+      <group delimiter=", ">
+        <text variable="publisher"/>
+        <text macro="year"/>
+      </group>
+      <text variable="page"/>
+    </group>
+  </macro>
+  <macro name="publication-thesis">
+    <group delimiter=": ">
+      <text variable="publisher-place"/>
+      <group delimiter=", ">
+        <text variable="publisher"/>
+        <text macro="year"/>
+      </group>
+    </group>
+  </macro>
+  <macro name="publication-periodical">
+    <group delimiter=": ">
+      <group delimiter=", ">
+        <text variable="container-title" text-case="title"/>
+        <group>
+          <group delimiter=", ">
+            <text macro="year"/>
+            <text variable="volume"/>
+          </group>
+          <text variable="issue" prefix="(" suffix=")"/>
+        </group>
+      </group>
+      <text variable="page"/>
+    </group>
+  </macro>
+  <macro name="publication-newspaper">
+    <group delimiter=": ">
+      <group delimiter=", ">
+        <text variable="container-title" text-case="title"/>
+        <group>
+          <date variable="issued" form="numeric"/>
+          <text variable="issue" prefix="(" suffix=")"/>
+        </group>
+      </group>
+      <text variable="page"/>
+    </group>
+  </macro>
+  <macro name="publication-patent">
+    <group>
+      <choose>
+        <if variable="issued">
+          <!-- 授权日/公告日 -->
+          <date variable="issued" form="numeric"/>
+        </if>
+        <else-if variable="submitted">
+          <!-- 申请日 -->
+          <date variable="submitted" form="numeric"/>
+        </else-if>
+      </choose>
+    </group>
+  </macro>
+  <macro name="publication-webpage">
+    <date variable="issued" form="numeric" prefix="(" suffix=")"/>
+    <date variable="accessed" form="numeric" prefix="[" suffix="]"/>
+  </macro>
+  <macro name="uri">
+    <text variable="URL"/>
+  </macro>
+  <!-- Types -->
+  <macro name="book">
+    <group delimiter=". " suffix=".">
+      <text macro="editor"/>
+      <text macro="title"/>
+      <text macro="publication"/>
+    </group>
+  </macro>
+  <macro name="monograph">
+    <group delimiter=". " suffix=".">
+      <text macro="author"/>
+      <text macro="title"/>
+      <text macro="publication"/>
+    </group>
+  </macro>
+  <macro name="thesis">
+    <group delimiter=". " suffix=".">
+      <text macro="author"/>
+      <text macro="title"/>
+      <text macro="publication-thesis"/>
+    </group>
+  </macro>
+  <macro name="monograph-part">
+    <group delimiter=". " suffix=".">
+      <text macro="author"/>
+      <text macro="title-monograph"/>
+      <text macro="publication"/>
+    </group>
+  </macro>
+  <macro name="conference">
+    <group delimiter=". " suffix=".">
+      <text macro="author"/>
+      <text macro="title-conference"/>
+      <text macro="publication"/>
+    </group>
+  </macro>
+  <macro name="periodical-part">
+    <group delimiter=". " suffix=".">
+      <text macro="author"/>
+      <text macro="title"/>
+      <text macro="publication-periodical"/>
+    </group>
+  </macro>
+  <macro name="newspaper">
+    <group delimiter=". " suffix=".">
+      <text macro="author"/>
+      <text macro="title"/>
+      <text macro="publication-newspaper"/>
+    </group>
+  </macro>
+  <macro name="patent">
+    <group delimiter=". " suffix=".">
+      <text macro="author"/>
+      <text macro="title-patent"/>
+      <text macro="publication-patent"/>
+    </group>
+  </macro>
+  <macro name="webpage">
+    <group delimiter=". " suffix=".">
+      <text macro="author"/>
+      <text macro="title"/>
+      <text macro="publication-webpage"/>
+      <text macro="uri"/>
+    </group>
+  </macro>
+  <macro name="other">
+    <group delimiter=". " suffix=".">
+      <text value="[Z]"/>
+    </group>
+  </macro>
+  <macro name="bibliography">
+    <choose>
+      <if type="book">
+        <text macro="book"/>
+      </if>
+      <else-if type="thesis">
+        <text macro="thesis"/>
+      </else-if>
+      <else-if type="standard">
+        <text macro="monograph"/>
+      </else-if>
+      <else-if type="report">
+        <text macro="monograph"/>
+      </else-if>
+      <else-if type="chapter">
+        <text macro="monograph-part"/>
+      </else-if>
+      <else-if type="paper-conference">
+        <text macro="conference"/>
+      </else-if>
+      <else-if type="article-journal">
+        <text macro="periodical-part"/>
+      </else-if>
+      <else-if type="article-magazine">
+        <text macro="periodical-part"/>
+      </else-if>
+      <else-if type="article-newspaper">
+        <text macro="newspaper"/>
+      </else-if>
+      <else-if type="patent">
+        <text macro="patent"/>
+      </else-if>
+      <else-if type="webpage">
+        <text macro="webpage"/>
+      </else-if>
+      <else>
+        <text macro="other"/>
+      </else>
+    </choose>
+  </macro>
+  <!-- Citation -->
+  <citation collapse="citation-number" after-collapse-delimiter=",">
+    <layout vertical-align="sup" delimiter="," prefix="[" suffix="]">
+      <text variable="citation-number"/>
+    </layout>
+  </citation>
+  <!-- Bibliography -->
+  <bibliography entry-spacing="0" second-field-align="flush" et-al-use-first="3" et-al-min="4">
+    <layout locale="en-US">
+      <text variable="citation-number" prefix="[" suffix="]"/>
+      <text macro="bibliography"/>
+    </layout>
+    <layout locale="en-GB">
+      <text variable="citation-number" prefix="[" suffix="]"/>
+      <text macro="bibliography"/>
+    </layout>
+    <layout locale="zh-CN">
+      <text variable="citation-number" prefix="[" suffix="]"/>
+      <text macro="bibliography"/>
+    </layout>
+    <layout>
+      <text variable="citation-number" prefix="[" suffix="]"/>
+      <text macro="bibliography"/>
+    </layout>
+  </bibliography>
+</style>
